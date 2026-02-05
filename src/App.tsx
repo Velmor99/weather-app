@@ -1,6 +1,9 @@
+import SearchBar from "./mediators/SearchBar"
+
 function App() {
+
   return (
-    <div></div>
+    <SearchBar />
   )
 }
 
