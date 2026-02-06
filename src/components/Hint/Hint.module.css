@@ -1,0 +1,9 @@
+.hint {
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hint:hover {
+  background-color: #f0f0f0;
+}

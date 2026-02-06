@@ -1,0 +1,24 @@
+.searchBarContainer {
+  position: relative;
+  width: 560px;
+  margin: 0 auto;
+}
+
+.searchInputContainer {
+  padding-top: 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.hintsContainer {
+  background-color: #fff;
+  width: 100%;
+  padding-top: 40px;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  z-index: 99;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 0 0 10px 10px;
+}
