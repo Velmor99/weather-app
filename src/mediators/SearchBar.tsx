@@ -5,7 +5,7 @@ import { createCityWorker } from "../services/cityWorker.client";
 import { useDebounce } from "../hooks/useDebounce";
 import type { City } from "../types/cityWorkerTypes";
 
-export default function SearchBar() {
+export default function SearchBar({fetchWeather}: {fetchWeather: (lat: number, lon: number) => void}) {
     const inputRef = useRef<HTMLInputElement>(null);
     const cityWorker = useRef<ReturnType<typeof createCityWorker> | null>(null);
     const [hints, setHints] = useState<City[]>([]);
@@ -30,9 +30,8 @@ export default function SearchBar() {
         setHints(result ?? []);
     }
 
-    const handleHintClick = (hint: City) => {
-        // TODO: handle hint click
-        console.log(hint)
+    const handleHintClick = async (hint: City) => {
+        fetchWeather(hint.coord.lat, hint.coord.lon);
         setHints([]);
         inputRef.current!.value = "";
     }
